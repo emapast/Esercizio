@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app',
+  templateUrl: 'app.component.html'
 })
+
+person: IPerson = {
+  firstname: "",
+  lastname: "",
+  eta: ""
+}
+
 export class AppComponent {
-  title = 'esercizio';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  model: any = {};
+
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+  }
 }
