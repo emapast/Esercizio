@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h3>Angular Form</h3>
-                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <form firstname="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
 
                     <div class="form-group">
                         <label for="firstName">Nome</label>
@@ -21,7 +21,7 @@
                             #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"
                             required />
                         <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
-                            <div *ngIf="lastName.errors.required">Cognome è obbligatorio</div>
+                            <div *ngIf="lastName?.errors?.required">Cognome è obbligatorio</div>
                         </div>
                     </div>
 
@@ -31,9 +31,9 @@
                             [ngClass]="{ 'is-invalid': f.submitted && eta.invalid }" required eta />
                         <div *ngIf="f.submitted && eta.invalid" class="invalid-feedback">
                             <div *ngIf="eta.errors.required">Età è obbligatoria</div>
-                            <div *ngIf="person.age>=18">Sei maggiorenne</div>
-                            <div *ngIf="!person.age>18">Sei minorenne</div>
                         </div>
+                        <div *ngIf="f.submitted && person.eta>=18">Sei maggiorenne</div>
+                        <div *ngIf="f.submitted && person.eta<18">Sei minorenne</div>
                     </div>
 
 

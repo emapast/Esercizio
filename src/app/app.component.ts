@@ -5,19 +5,33 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html'
 })
 
-person: IPerson = {
-  firstname: "",
-  lastname: "",
-  eta: ""
-}
-
 export class AppComponent {
+
+  
+  person: IPerson = {
+    firstname: "",
+    lastname: "",
+    eta: 20,                // non so come rendere la stringa -> valore numerico...
+  };
+ 
+
   title(title: any) {
     throw new Error('Method not implemented.');
   }
   model: any = {};
 
   onSubmit() {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+    alert('DATI REGISTRATI\n' + JSON.stringify(this.model))
+    console.log('DATI SALVATI IN CONSOLE\n\n' + JSON.stringify(this.model))
   }
 }
+
+export interface IPerson {
+  firstname: string;
+  lastname: string;
+  eta: number;
+}
+
+
+
+
