@@ -7,7 +7,7 @@
 
                     <div class="form-group">
                         <label for="firstName">Nome</label>
-                        <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName"
+                        <input type="text" class="form-control" name="firstName" [(ngModel)]="person.firstname"
                             #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"
                             required />
                         <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
@@ -17,7 +17,7 @@
 
                     <div class="form-group">
                         <label for="lastName">Cognome</label>
-                        <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName"
+                        <input type="text" class="form-control" name="lastName" [(ngModel)]="person.lastname"
                             #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"
                             required />
                         <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
@@ -27,7 +27,7 @@
 
                     <div class="form-group">
                         <label for="eta">Età</label>
-                        <input type="text" class="form-control" name="eta" [(ngModel)]="model.eta" #eta="ngModel"
+                        <input type="text" class="form-control" name="eta" [(ngModel)]="person.eta" #eta="ngModel"
                             [ngClass]="{ 'is-invalid': f.submitted && eta.invalid }" required eta />
                         <div *ngIf="f.submitted && eta.invalid" class="invalid-feedback">
                             <div *ngIf="eta.errors.required">Età è obbligatoria</div>
