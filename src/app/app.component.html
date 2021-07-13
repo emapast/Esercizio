@@ -36,7 +36,9 @@
                         <div *ngIf="f.submitted && person.eta<18">Sei minorenne</div>
                     </div>
 
-
+                    <div *ngIf="f.valid && f.submitted">
+                        <app-person [person]="person"></app-person>
+                    </div>
                     <div class="form-group">
                         <button class="btn btn-primary">Invio</button>
                     </div>
